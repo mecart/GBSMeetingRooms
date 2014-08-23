@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rooms>
+<room>
+    <roomname>Admin On Call</roomname>
+    <floor>PB</floor>
+    <x>590</x>
+    <y>710</y>
+</room>
+<room>
+    <roomname>Alemania</roomname>
+    <floor>PB</floor>
+    <x>590</x>
+    <y>510</y>
+</room>
+<room>
+    <roomname>Américas</roomname>
+    <floor>PB</floor>
+    <x>265</x>
+    <y>915</y>
+</room>
+<room>
+    <roomname>Antártida</roomname>
+    <floor>PA</floor>
+    <x>400</x>
+    <y>1080</y>
+</room>
+<room>
+    <roomname>Argelia</roomname>
+    <floor>PA</floor>
+    <x>270</x>
+    <y>950</y>
+</room>
+<room>
+    <roomname>Ártida</roomname>
+    <floor>PA</floor>
+    <x>400</x>
+    <y>1130</y>
+</room>
+<room>
+    <roomname>Asia</roomname>
+    <floor>PA</floor>
+    <x>400</x>
+    <y>820</y>
+</room>
+<room>
+    <roomname>Atlántico</roomname>
+    <floor>PB</floor>
+    <x>265</x>
+    <y>980</y>
+</room>
+<room>
+    <roomname>Austria</roomname>
+    <floor>PB</floor>
+    <x>590</x>
+    <y>455</y>
+</room>
+<room>
+    <roomname>Camerún</roomname>
+    <floor>PA</floor>
+    <x>270</x>
+    <y>910</y>
+</room>
+<room>
+    <roomname>China</roomname>
+    <floor>PA</floor>
+    <x>80</x>
+    <y>150</y>
+</room>
+<room>
+    <roomname>Classrooms</roomname>
+    <floor>PB</floor>
+    <x>590</x>
+    <y>140</y>
+</room>
+<room>
+    <roomname>Creative Room</roomname>
+    <floor>PA</floor>
+    <x>80</x>
+    <y>240</y>
+</room>
+<room>
+    <roomname>Dinamarca</roomname>
+    <floor>PB</floor>
+    <x>590</x>
+    <y>435</y>
+</room>
+<room>
+    <roomname>Enfermería</roomname>
+    <floor>PB</floor>
+    <x>555</x>
+    <y>635</y>
+</room>
+<room>
+    <roomname>España</roomname>
+    <floor>PB</floor>
+    <x>590</x>
+    <y>380</y>
+</room>
+<room>
+    <roomname>Europa</roomname>
+    <floor>PB</floor>
+    <x>395</x>
+    <y>840</y>
+</room>
+<room>
+    <roomname>Finlandia</roomname>
+    <floor>PB</floor>
+    <x>590</x>
+    <y>330</y>
+</room>
+<room>
+    <roomname>Francia</roomname>
+    <floor>PB</floor>
+    <x>590</x>
+    <y>305</y>
+</room>
+<room>
+    <roomname>Garage HP Labs</roomname>
+    <floor>PA</floor>
+    <x>600</x>
+    <y>230</y>
+</room>
+<room>
+    <roomname>Gimnasio</roomname>
+    <floor>PA</floor>
+    <x>460</x>
+    <y>660</y>
+</room>
+<room>
+    <roomname>Grecia</roomname>
+    <floor>PB</floor>
+    <x>590</x>
+    <y>250</y>
+</room>
+<room>
+    <roomname>India</roomname>
+    <floor>PA</floor>
+    <x>80</x>
+    <y>390</y>
+</room>
+<room>
+    <roomname>Italia</roomname>
+    <floor>PA</floor>
+    <x>490</x>
+    <y>680</y>
+</room>
+<room>
+    <roomname>Letonia</roomname>
+    <floor>PA</floor>
+    <x>600</x>
+    <y>510</y>
+</room>
+<room>
+    <roomname>Lituania</roomname>
+    <floor>PA</floor>
+    <x>600</x>
+    <y>470</y>
+</room>
+<room>
+    <roomname>Lugares Pool</roomname>
+    <floor>PA</floor>
+    <x>400</x>
+    <y>930</y>
+</room>
+<room>
+    <roomname>Madagascar</roomname>
+    <floor>PA</floor>
+    <x>270</x>
+    <y>840</y>
+</room>
+<room>
+    <roomname>Mediterráneo</roomname>
+    <floor>PB</floor>
+    <x>265</x>
+    <y>785</y>
+</room>
+<room>
+    <roomname>Oceanía</roomname>
+    <floor>PB</floor>
+    <x>265</x>
+    <y>1020</y>
+</room>
+<room>
+    <roomname>Pacífico</roomname>
+    <floor>PB</floor>
+    <x>265</x>
+    <y>845</y>
+</room>
+<room>
+    <roomname>Polonia</roomname>
+    <floor>PA</floor>
+    <x>600</x>
+    <y>430</y>
+</room>
+<room>
+    <roomname>Portugal</roomname>
+    <floor>PA</floor>
+    <x>600</x>
+    <y>390</y>
+</room>
+<room>
+    <roomname>Quiet Rooms 1-4</roomname>
+    <floor>PA</floor>
+    <x>400</x>
+    <y>880</y>
+</room>
+<room>
+    <roomname>Quiet Rooms 5-8</roomname>
+    <floor>PA</floor>
+    <x>600</x>
+    <y>50</y>
+</room>
+<room>
+    <roomname>Quiet Rooms 9-12</roomname>
+    <floor>PA</floor>
+    <x>80</x>
+    <y>50</y>
+</room>
+<room>
+    <roomname>Quiet Rooms 13-16</roomname>
+    <floor>PA</floor>
+    <x>306</x>
+    <y>1007</y>
+</room>
+<room>
+    <roomname>Sudáfrica</roomname>
+    <floor>PA</floor>
+    <x>270</x>
+    <y>875</y>
+</room>
+<room>
+    <roomname>Suecia</roomname>
+    <floor>PA</floor>
+    <x>600</x>
+    <y>105</y>
+</room>
+<room>
+    <roomname>Suiza</roomname>
+    <floor>PA</floor>
+    <x>600</x>
+    <y>145</y>
+</room>
+<room>
+    <roomname>Training Room</roomname>
+    <floor>PB</floor>
+    <x>520</x>
+    <y>1210</y>
+</room>
+<room>
+    <roomname>TCE Lab</roomname>
+    <floor>PB</floor>
+    <x>474</x>
+    <y>1230</y>
+</room>
+<room>
+    <roomname>Túnez</roomname>
+    <floor>PA</floor>
+    <x>270</x>
+    <y>800</y>
+</room>
+<room>
+    <roomname>Virtual Gym (Wii)</roomname>
+    <floor>PB</floor>
+    <x>590</x>
+    <y>675</y>
+</room>
+
+</rooms>

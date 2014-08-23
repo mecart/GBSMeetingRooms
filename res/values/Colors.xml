@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="hp_blue">#0096d6</color>
+    <color name="white">#ffffff</color>
+    <color name="hp_orange">#d7410b</color>
+    <color name="hp_green">#008424</color>
+    <color name="hp_purple">#822980</color>
+    <color name="hp_lightgray">#e5e8e8</color>
+    <color name="black">#000000</color>
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="PA_width">669dp</dimen>
+    <dimen name="PA_height">1322dp</dimen>
+    <dimen name="PB_width">669dp</dimen>
+    <dimen name="PB_height">1322dp</dimen>
+    <dimen name="activity_horizontal_margin">5dp</dimen>
+    <dimen name="activity_vertical_margin">5dp</dimen>
+
+</resources>
