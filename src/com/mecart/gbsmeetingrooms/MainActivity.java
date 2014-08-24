@@ -8,8 +8,6 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-import com.mecart.gbsmeetingrooms.MainActivity.Room;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -24,10 +22,9 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.provider.CalendarContract.Colors;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.LayoutInflater.Filter;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -35,11 +32,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity implements SensorEventListener {
 
@@ -146,6 +142,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 		}
 
 		super.onCreate(savedInstanceState);
+		log("setContentView");
 		setContentView(R.layout.activity_main);
 		log("Created");
 
@@ -174,7 +171,19 @@ public class MainActivity extends Activity implements SensorEventListener {
 		TextView textViewLabel = (TextView) findViewById(R.id.textViewSearchFor);
 		Typeface hpSimplified = Typeface.createFromAsset(getAssets(), "HPSimplified_Rg.ttf");
 		textViewLabel.setTypeface(hpSimplified);
-
+		
+		//begin autocompletetextview
+		//http://www.tutorialspoint.com/android/android_auto_complete.htm
+		log("AutoCompleteTextView actv = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1); ");
+		AutoCompleteTextView actv = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1); 
+		log("ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,roomNames);");
+		//ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,roomNames);
+		AutoCompleteAdapter acAdapter = new AutoCompleteAdapter(this,R.layout.my_spinner_layout,R.id.text_room_name,roomNames);
+		log("actv.setAdapter(acAdapter);");
+		actv.setAdapter(acAdapter);
+		
+		
+		//end autocompletetextview
 		
 		  //log("Setting up spinner..."); 
 			Spinner spinner1 = (Spinner)  findViewById(R.id.spinner1); // Create an ArrayAdapter using the  string array and a default spinner layout 
@@ -998,5 +1007,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 		}
 
 	
-}
+	}
+	
+	
 }
