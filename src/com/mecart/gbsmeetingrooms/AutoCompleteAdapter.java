@@ -38,9 +38,28 @@ public class AutoCompleteAdapter extends ArrayAdapter<String> implements Filtera
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return super.getView(position, convertView, parent);
+        //return super.getView(position, convertView, parent);
+    	return getCustomView(position,convertView,parent, parent.getContext());
+    	
     }
-
+    
+	public View getCustomView(int position, View convertView, ViewGroup parent, Context context) { 
+		LayoutInflater inflater = LayoutInflater.from(context);
+		View mySpinner = inflater.inflate(R.layout.my_spinner_layout, parent, false); 
+		TextView main_text = (TextView) mySpinner .findViewById(R.id.text_room_name); 
+		//main_text.setText((CharSequence)stringArray.get(position));
+		main_text.setText(getItem(position));
+		
+		Typeface hpSimplified = Typeface.createFromAsset(context.getAssets(), "HPSimplified_Rg.ttf");
+		main_text.setTypeface(hpSimplified);
+		
+		
+		Typeface hpSimplifiedBold = Typeface.createFromAsset(context.getAssets(), "HPSimplified_Bd.ttf");
+		TextView bullet = (TextView) mySpinner.findViewById(R.id.bullet);
+		bullet.setTypeface(hpSimplifiedBold);
+	 
+		return mySpinner;
+	}
     @Override
     public Filter getFilter() {
         if (mFilter == null) {

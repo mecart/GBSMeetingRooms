@@ -181,6 +181,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 		AutoCompleteAdapter acAdapter = new AutoCompleteAdapter(this,R.layout.my_spinner_layout,R.id.text_room_name,roomNames);
 		log("actv.setAdapter(acAdapter);");
 		actv.setAdapter(acAdapter);
+		actv.setTypeface(hpSimplified);
 		
 		
 		//end autocompletetextview
