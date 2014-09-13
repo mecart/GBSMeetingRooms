@@ -27,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -184,6 +185,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 		log("actv.setAdapter(acAdapter);");
 		actv.setAdapter(acAdapter);
 		actv.setTypeface(hpSimplified);
+		actv.setTextColor(HPBLUE);
 		
 		actv.setOnItemClickListener(new OnItemClickListener() {
 			
@@ -191,6 +193,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				log("onItemClick()");
 				sala = parent.getItemAtPosition(position).toString();
 				log("actv selected: "+sala );
 				map.locateRoom(findRoomInListByName(rooms, sala));
@@ -204,7 +207,18 @@ public class MainActivity extends Activity implements SensorEventListener {
 			
 			
 		});
-				//end autocompletetextview
+		
+		actv.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				log("onClick");
+				// TODO Auto-generated method stub
+				((AutoCompleteTextView)v).setText("");
+			}
+		});
+		
+		//end autocompletetextview
 		
 		  //log("Setting up spinner..."); 
 			Spinner spinner1 = (Spinner)  findViewById(R.id.spinner1); // Create an ArrayAdapter using the  string array and a default spinner layout 
@@ -861,13 +875,28 @@ public class MainActivity extends Activity implements SensorEventListener {
 	private static String processIntentText(String text) {
 		String query = text.substring(text.indexOf("q=") + 2).toLowerCase();
 		String exchangeNameIdentifier = "CONF-".toLowerCase();
-		String nombre;
+		String nombre="";
 
+		if(query.startsWith("quiet room ")){
+			int n;
+			n = Integer.parseInt(query.replace("quiet room ", ""));
+			if(1<=n && n<=4){
+				nombre = "quiet rooms 1-4";
+			} else if(5<=n && n<=8){
+				nombre = "quiet rooms 5-8";
+			} else if(9<=n && n<=12){
+				nombre = "quiet rooms 9-12";
+			} else if(13<=n && n<=16){
+				nombre = "quiet rooms 13-16";
+			}  
+		}
+		
 		if (query.contains(exchangeNameIdentifier)) {
 			nombre = query.substring(
 					query.indexOf(exchangeNameIdentifier)
 							+ exchangeNameIdentifier.length()).replace(")", "");
 
+					
 		} else {
 
 			nombre = query.replace("sala ", "").replace(" room", "").replace("%20"," ");
@@ -1018,11 +1047,14 @@ public class MainActivity extends Activity implements SensorEventListener {
 			
 			Typeface hpSimplified = Typeface.createFromAsset(getAssets(), "HPSimplified_Rg.ttf");
 			main_text.setTypeface(hpSimplified);
+			main_text.setTextColor(HPBLUE);
+			
 			
 			
 			Typeface hpSimplifiedBold = Typeface.createFromAsset(getAssets(), "HPSimplified_Bd.ttf");
 			TextView bullet = (TextView) mySpinner.findViewById(R.id.bullet);
 			bullet.setTypeface(hpSimplifiedBold);
+			bullet.setTextColor(HPORANGE);
 		 
 			return mySpinner;
 		}
