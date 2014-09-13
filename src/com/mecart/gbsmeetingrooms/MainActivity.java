@@ -24,12 +24,14 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.LayoutInflater.Filter;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -183,8 +185,26 @@ public class MainActivity extends Activity implements SensorEventListener {
 		actv.setAdapter(acAdapter);
 		actv.setTypeface(hpSimplified);
 		
+		actv.setOnItemClickListener(new OnItemClickListener() {
+			
 		
-		//end autocompletetextview
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				sala = parent.getItemAtPosition(position).toString();
+				log("actv selected: "+sala );
+				map.locateRoom(findRoomInListByName(rooms, sala));
+				hideKeyboard();
+				
+			}
+
+	
+		
+
+			
+			
+		});
+				//end autocompletetextview
 		
 		  //log("Setting up spinner..."); 
 			Spinner spinner1 = (Spinner)  findViewById(R.id.spinner1); // Create an ArrayAdapter using the  string array and a default spinner layout 
@@ -200,7 +220,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 	
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				// TODO Auto-generated method stub
+				
 				sala = parent.getItemAtPosition(position).toString();
 				//log("Spinner selected: "+sala );
 				map.locateRoom(findRoomInListByName(rooms, sala));
@@ -1008,6 +1028,17 @@ public class MainActivity extends Activity implements SensorEventListener {
 		}
 
 	
+	}
+
+	private void hideKeyboard() {
+		log("Trying to hide keyboard...");
+	    InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
+
+	    // check if no view has focus:
+	    View view = this.getCurrentFocus();
+	    if (view != null) {
+	        inputManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+	    }
 	}
 	
 	
