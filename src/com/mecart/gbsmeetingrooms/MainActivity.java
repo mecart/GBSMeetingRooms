@@ -160,9 +160,9 @@ public class MainActivity extends Activity implements SensorEventListener {
 				//sala = "suecia";
 				//log("Requesting to locate room " + sala);
 				
-				for(int i=0;i<rooms.size();i++){
+				//for(int i=0;i<rooms.size();i++){
 					//log("Room " + i + ": "+ rooms.get(i).roomName);
-				}
+				//}
 				
 				initialRoomID = findRoomIdInListByName(rooms,sala);
 				//log("initialRoomID = " + initialRoomID);
@@ -186,6 +186,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 		actv.setAdapter(acAdapter);
 		actv.setTypeface(hpSimplified);
 		actv.setTextColor(HPBLUE);
+		actv.setThreshold(2);
 		
 		actv.setOnItemClickListener(new OnItemClickListener() {
 			
@@ -220,6 +221,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 		
 		//end autocompletetextview
 		
+		/**
 		  //log("Setting up spinner..."); 
 			Spinner spinner1 = (Spinner)  findViewById(R.id.spinner1); // Create an ArrayAdapter using the  string array and a default spinner layout 
 		  //ArrayAdapter<String>  roomsAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, roomNames);
@@ -248,11 +250,15 @@ public class MainActivity extends Activity implements SensorEventListener {
 			
 			
 		  });
+		  **/
 		
 		  if(0!=initialRoomID){
-			 // log("initialRoomID was " + initialRoomID);
-			 // log("Trying to set spinner...");
-			  spinner1.setSelection(initialRoomID, true);
+			  log("initialRoomID was " + initialRoomID);
+			  //log("Trying to set spinner...");
+			  //spinner1.setSelection(initialRoomID, true);
+			  
+			  actv.setText(roomNames.get(initialRoomID));
+			  map.locateRoom(findRoomInListByName(rooms, sala));
 		  }
 
 		//TextView spinnerTextView = (TextView) spinner1.findViewById(R.id.text_room_name);
@@ -731,7 +737,10 @@ public class MainActivity extends Activity implements SensorEventListener {
 
 		public void setTarget(float tTarget) {
 			//log("Receiving target " + tTarget);
-			thetaTarget = (float) (tTarget);
+			if(Math.abs(tTarget-thetaTarget)>0.2f){
+				//log("Moving");
+				thetaTarget = (float) (tTarget);
+			}
 		}
 
 
